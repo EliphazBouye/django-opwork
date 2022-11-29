@@ -1,17 +1,19 @@
-from django.forms import ModelForm
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm, forms
 from .models import Freelance
 
-class UserForm(ModelForm):
+class FreelanceForm(UserCreationForm):
     
+    bio = forms.CharField(widget=forms.Textarea(attrs={'name': 'bio', 'row': 30, 'cols': 30}))
     class Meta:
-        model = User
         fields = ['username', 'email', 'password', 'first_name', 'last_name']
+        model = get_user_model()
+        
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
     
-
-
-class FreelanceForm(ModelForm):
-    
-    class Meta:
-        model = Freelance
-        fields = ['bio']
+    def save(self, *args, **kwargs):
+        user = super().save(*args, **kwargs)
+        
+        Freelance.objects.create(user=user, bio=self.cleaned_data.get("bio"))
+        return user

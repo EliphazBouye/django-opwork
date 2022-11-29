@@ -1,7 +1,8 @@
 <h3>Register new Freelance</h3>
 <hr>
-{% comment %} <labeel>username :</labeel> {% endcomment %}
+<!--{% comment %} <labeel>username :</labeel> {% endcomment %} -->
 <form method="POST">
-    {{form.as_p}}
+        {% csrf_token %}
+        {{form}}
     <button type="submit">Register</button>
 </form>
