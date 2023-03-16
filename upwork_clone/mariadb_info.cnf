@@ -1,5 +1,0 @@
-[client]
-database = upwork
-user = root
-password = root
-default-character-set = utf8
