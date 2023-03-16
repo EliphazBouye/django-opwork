@@ -1,8 +1,10 @@
 from django.urls import path
-
-from .views import FreelanceRegisterFormView
+from django.views.generic import TemplateView
+# from .views import
 
 urlpatterns = [
     # path('', )
-    path('register/', FreelanceRegisterFormView.as_view(), name="register-freelance"),
+    path('', TemplateView.as_view(template_name="opwork/index.html"), name="home"),
+    # path('accounts/signup/freelance', )
+    # path('register/', FreelanceRegisterFormView.as_view(), name="register-freelance"),
 ]

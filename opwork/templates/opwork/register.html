@@ -3,6 +3,6 @@
 <!--{% comment %} <labeel>username :</labeel> {% endcomment %} -->
 <form method="POST">
         {% csrf_token %}
-        {{form}}
+        {% comment %} {{form}} {% endcomment %}
     <button type="submit">Register</button>
 </form>
