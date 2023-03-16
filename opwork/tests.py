@@ -1,5 +1,5 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 
-class FreelancersUsersTest(TestCase):
+class OpworksUsersTest(TestCase):
     # def 

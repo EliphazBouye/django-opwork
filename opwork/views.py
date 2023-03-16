@@ -4,6 +4,6 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 class FreelanceRegisterFormView(CreateView):
-    template_name = 'freelancer/register.html'
+    template_name = 'opwork/register.html'
     form_class = FreelanceForm
-    success_url = reverse_lazy("freelancer:index")
+    success_url = reverse_lazy("opwork:index")
