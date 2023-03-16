@@ -15,3 +15,13 @@ install project requirements from the requirements.txt :
 ```bash
 pip install -r requirements.txt
 ```
+To start the application you should make migration to detect and apply last change into database.  
+Before that add database credentials in `.env` file, make a copy of `.env.exemple` to `.env`.  
+After adding database credentials into `.env` file apply migrations :
+```bash
+python manage.py migrate
+```
+then run the project 
+```bash
+python manage.py runserver
+```
