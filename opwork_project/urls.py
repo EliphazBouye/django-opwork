@@ -20,6 +20,7 @@ from opwork.views import opwork,freelance
 
 urlpatterns = [
     path('', include('opwork.urls')),
-    path('account/signup', opwork.SignUpView.as_view(), name="signup"),
+    path('account/signup/', opwork.SignUpView.as_view(), name="signup"),
+    path('account/signup/freelance/', freelance.FreelanceSignUpView.as_view(), name="freelance_signup"),
     path('admin/', admin.site.urls),
 ]
