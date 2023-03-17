@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from opwork.views import opwork,freelance
+from opwork.views import opwork, freelance, client
 
 urlpatterns = [
     path('', include('opwork.urls')),
     path('account/signup/', opwork.SignUpView.as_view(), name="signup"),
     path('account/signup/freelance/', freelance.FreelanceSignUpView.as_view(), name="freelance_signup"),
+    path('account/signup/client/', client.ClientSignUpView.as_view(), name="client_signup"),
     path('admin/', admin.site.urls),
 ]
