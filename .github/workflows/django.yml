@@ -10,9 +10,7 @@ env:
   DB_NAME: "opwork_workflow_db"
   DB_USER: "root"
   DB_PASSWORD: ""
-  HOST: '127.0.0.1'
-  PORT: '3306'
-
+  DB_HOST: "127.0.0.1"
 
 jobs:
   build:
