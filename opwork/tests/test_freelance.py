@@ -1,8 +1,8 @@
 from django.test import TestCase
 from http import HTTPStatus
 from django.contrib.auth import get_user_model
-from .models import Freelance
-from .forms import FreelanceSignUpForm
+from ..models import Freelance
+from ..forms import FreelanceSignUpForm
 
 class FreelanceSignUpFormTest(TestCase):
     def setUp(self):
