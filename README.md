@@ -1,4 +1,4 @@
-# Django Upwork Clone
+# Django Opwork
 
 How to run the project :  
 Prerequis :
