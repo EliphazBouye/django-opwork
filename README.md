@@ -11,7 +11,7 @@ start by create a python virtual environment
 ```bash
 python -m venv venv 
 ```
-install project requirements from the requirements.txt :
+install project dependancies from the requirements.txt :
 ```bash
 pip install -r requirements.txt
 ```
