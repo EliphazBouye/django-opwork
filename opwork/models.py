@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser, User
 class User(AbstractUser):
     is_freelance = models.BooleanField(default=False)
     is_client = models.BooleanField(default=False)
-    bio = models.TextField()
+    bio = models.TextField(null=True)
 
 class Freelance(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name="user")
