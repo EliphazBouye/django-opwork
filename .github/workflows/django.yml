@@ -39,4 +39,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python manage.py tests opwork
+        python manage.py test opwork
