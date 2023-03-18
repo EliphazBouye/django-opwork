@@ -1,7 +1,13 @@
-<h3>Register new Freelance</h3>
+{% extends 'opwork/base.html' %}
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+<h3>Registration</h3>
 <hr>
-<!--{% comment %} <labeel>username :</labeel> {% endcomment %} -->
 <div>
-    <a href="/account/signup/freelance/">Freelance SignUp</a>
+    <label>Choose what profile do you want to create ?</label>
+    <br/>
+    <a href="/account/signup/freelance/">Freelance SignUp</a> |
     <a href="/account/signup/client/">Client SignUp</a>
 </div>
+{% endblock content %}

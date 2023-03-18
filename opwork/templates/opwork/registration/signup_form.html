@@ -1,5 +1,9 @@
+{% extends 'opwork/base.html' %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
 <form method="POST">
     {% csrf_token %}
     {{form}}
 <button type="submit">Register</button>
 </form>
+{% endblock content %}
