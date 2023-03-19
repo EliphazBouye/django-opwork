@@ -1,6 +1,8 @@
 from django.contrib.auth import login
 from django.shortcuts import redirect
-from django.views.generic import CreateView
+from django.contrib.auth.decorators import login_required
+from django.views.generic import CreateView, TemplateView
+from ..models import Freelance
 
 from ..forms import FreelanceSignUpForm
 from ..models import User
@@ -18,4 +20,16 @@ class FreelanceSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('home')
+        return redirect('freelance_profile')
+
+# @login_required
+class FreelanceProfileView(TemplateView):
+    template_name = "opwork/auth/profile.html"
+    model = Freelance
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user_id = self.request.user.id
+        context["user"] = User.objects.get(pk=user_id)
+        return context
+    
