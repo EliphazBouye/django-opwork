@@ -56,22 +56,22 @@ class FreelanceSignUpViewTests(TestCase):
         }
         
     def test_get(self):
-        response = self.client.get("/account/signup/freelance/")
+        response = self.client.get("/accounts/signup/freelance/")
         
         self.assertEqual(response.status_code, HTTPStatus.OK)
  
     def test_not_found_get(self):
-        response = self.client.get("account/signup/freelance/")
+        response = self.client.get("accounts/signup/freelance/")
         
         self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
         
     def test_post_success(self):
-        response = self.client.post("/account/signup/freelance/", data=self.form_data)
+        response = self.client.post("/accounts/signup/freelance/", data=self.form_data)
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
-        self.assertEqual(response['Location'], "/profile/")
+        self.assertEqual(response['Location'], "/accounts/profile/")
         
     def test_post_error(self):
-        response = self.client.post("/account/signup/freelance/", data={
+        response = self.client.post("/accounts/signup/freelance/", data={
             "first_name": self.first_name,
             "last_name" : self.last_name,
             "username": self.username,

@@ -10,7 +10,7 @@ class SignUpView(TemplateView):
 
 class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = "opwork/auth/profile.html"
-    login_url = '/account/login/'
+    login_url = '/accounts/login/'
     redirect_field_name = "redirect_to"
     
     def get_context_data(self, **kwargs):
