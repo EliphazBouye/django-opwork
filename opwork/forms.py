@@ -32,3 +32,4 @@ class ClientSignUpForm(UserCreationForm):
         user.save()
         Client.objects.create(user=user)
         return user
+    
