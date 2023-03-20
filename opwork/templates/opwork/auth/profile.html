@@ -1,5 +1,14 @@
 {% extends 'opwork/base.html' %}
-{% block title %}Freelance profile{% endblock %}
+
+
+{% block title %}
+    {% if user.is_freelance %}
+    Freelance profile
+    {% else %}
+    Client profile
+    {% endif %}
+{% endblock %}
+
 {% block content %}
 <h3>This is your freelancing profile</h3>
 Username : {{user.username}}

@@ -10,7 +10,13 @@
         {% block sidebar %}
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/account/signup/">SignUp</a></li>
+            {% if not request.user.is_authenticated %}
+                <li><a href="/account/login/">Login</a></li>
+                <li><a href="/account/signup/">SignUp</a></li>
+            {% else %}
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+            {% endif %}
         </ul>
         {% endblock %}
     </div>
