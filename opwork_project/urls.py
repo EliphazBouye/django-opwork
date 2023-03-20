@@ -20,11 +20,12 @@ from opwork.views import opwork, freelance, client
 
 urlpatterns = [
     path('', include('opwork.urls')),
-    path('account/signup/', opwork.SignUpView.as_view(), name="signup"),
-    path('account/login/', opwork.SignInView.as_view(), name="signin"),
-    path('account/signup/freelance/', freelance.FreelanceSignUpView.as_view(), name="freelance_signup"),
-    path('account/signup/client/', client.ClientSignUpView.as_view(), name="client_signup"),
-    path('profile/', opwork.ProfileView.as_view(), name="profile"),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', opwork.SignUpView.as_view(), name="signup"),
+    # path('account/login/', opwork.SignInView.as_view(), name="login"),
+    path('accounts/signup/freelance/', freelance.FreelanceSignUpView.as_view(), name="freelance_signup"),
+    path('accounts/signup/client/', client.ClientSignUpView.as_view(), name="client_signup"),
+    path('accounts/profile/', opwork.ProfileView.as_view(), name="profile"),
     path('logout/', opwork.logout_view, name="logout"),
     path('admin/', admin.site.urls),
 ]

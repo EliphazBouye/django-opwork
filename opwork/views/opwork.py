@@ -1,15 +1,12 @@
 from django.views.generic import TemplateView
+from django.contrib.auth.views import LoginView
 from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin 
 from ..models import User
 
-
 class SignUpView(TemplateView):
     template_name = "opwork/registration/register.html"
-    
-class SignInView(TemplateView):
-    template_name = "opwork/registration/login.html"
 
 class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = "opwork/auth/profile.html"
