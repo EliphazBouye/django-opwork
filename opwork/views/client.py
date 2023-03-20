@@ -18,4 +18,4 @@ class ClientSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('home')    
+        return redirect('profile')    

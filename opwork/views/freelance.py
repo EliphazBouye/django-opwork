@@ -20,16 +20,8 @@ class FreelanceSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('freelance_profile')
+        return redirect('profile')
 
 # @login_required
-class FreelanceProfileView(TemplateView):
-    template_name = "opwork/auth/profile.html"
-    model = Freelance
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        user_id = self.request.user.id
-        context["user"] = User.objects.get(pk=user_id)
-        return context
+
     
