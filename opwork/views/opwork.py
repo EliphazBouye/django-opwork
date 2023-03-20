@@ -1,14 +1,20 @@
 from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.contrib.auth import logout
+from django.contrib.auth.mixins import LoginRequiredMixin 
 from ..models import User
 
 
 class SignUpView(TemplateView):
     template_name = "opwork/registration/register.html"
+    
+class SignInView(TemplateView):
+    template_name = "opwork/registration/login.html"
 
-class ProfileView(TemplateView):
+class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = "opwork/auth/profile.html"
+    login_url = '/account/login/'
+    redirect_field_name = "redirect_to"
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
