@@ -23,6 +23,7 @@ urlpatterns = [
     path('account/signup/', opwork.SignUpView.as_view(), name="signup"),
     path('account/signup/freelance/', freelance.FreelanceSignUpView.as_view(), name="freelance_signup"),
     path('account/signup/client/', client.ClientSignUpView.as_view(), name="client_signup"),
-    path('profile/freelance', freelance.FreelanceProfileView.as_view(), name="freelance_profile"),
+    path('profile/', opwork.ProfileView.as_view(), name="profile"),
+    path('logout/', opwork.logout_view, name="logout"),
     path('admin/', admin.site.urls),
 ]
