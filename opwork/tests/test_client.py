@@ -68,7 +68,7 @@ class ClientSignUpViewTests(TestCase):
     def test_post_success(self):
         response = self.client.post("/account/signup/client/", data=self.form_data)
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
-        self.assertEqual(response['Location'], "/")
+        self.assertEqual(response['Location'], "/profile")
         
     def test_post_error(self):
         response = self.client.post("/account/signup/client/", data={
