@@ -6,10 +6,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from ..models import User
 
 class SignUpView(TemplateView):
-    template_name = "opwork/registration/register.html"
+    template_name = "registration/register.html"
 
 class ProfileView(LoginRequiredMixin,TemplateView):
-    template_name = "opwork/auth/profile.html"
+    template_name = "users/auth/profile.html"
     login_url = '/accounts/login/'
     redirect_field_name = "redirect_to"
     
@@ -18,6 +18,7 @@ class ProfileView(LoginRequiredMixin,TemplateView):
         user_id = self.request.user.id
         context["user"] = User.objects.get(pk=user_id)
         return context
+    
     
 def logout_view(request):
     logout(request)

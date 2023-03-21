@@ -8,7 +8,7 @@ from ..forms import ClientSignUpForm
 class ClientSignUpView(CreateView):
     model = User
     form_class = ClientSignUpForm
-    template_name = 'opwork/registration/signup_form.html'
+    template_name = 'registration/signup_form.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
