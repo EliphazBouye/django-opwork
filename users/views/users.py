@@ -7,7 +7,13 @@ from ..models import User
 
 class SignUpView(TemplateView):
     template_name = "registration/register.html"
-
+    
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('profile')
+        return super().dispatch(request, *args, **kwargs)
+    
+    
 class ProfileView(LoginRequiredMixin,TemplateView):
     template_name = "users/auth/profile.html"
     login_url = '/accounts/login/'

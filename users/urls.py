@@ -5,7 +5,7 @@ from django.contrib.auth import views as auth_login
 urlpatterns = [
     # path('', )
     path('accounts/signup/', users.SignUpView.as_view(), name="signup"),
-    path('account/login/', auth_login.LoginView.as_view(redirect_authenticated_user=True), name="login"),
+    path('accounts/login/', auth_login.LoginView.as_view(redirect_authenticated_user=True), name="login"),
     path('accounts/signup/freelance/', freelance.FreelanceSignUpView.as_view(), name="freelance_signup"),
     path('accounts/signup/client/', client.ClientSignUpView.as_view(), name="client_signup"),
     path('accounts/password-reset/', auth_login.PasswordResetView.as_view(template_name="registration/password_reset.html"), name="password_reset"),
