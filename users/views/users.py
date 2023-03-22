@@ -18,8 +18,7 @@ class ProfileView(LoginRequiredMixin,TemplateView):
         user_id = self.request.user.id
         context["user"] = User.objects.get(pk=user_id)
         return context
-    
-    
+
 def logout_view(request):
     logout(request)
     return redirect('home')
