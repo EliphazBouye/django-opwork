@@ -2,7 +2,7 @@
 
 How to run the project :  
 Prerequis :
-- Python 3.10 and greater
+- Python 3.10+
 - Mariadb
 - python virtualenv
 - and pip
