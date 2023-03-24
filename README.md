@@ -21,9 +21,9 @@ After adding database credentials into `.env` file apply migrations :
 ```bash
 python manage.py migrate
 ```
-run all tests to see if all works fine before running the server : 
+run users application tests to see if all works fine before running the server : 
 ```bash
-python manage.py test opwork
+python manage.py test users
 ```
 then run the project 
 ```bash
