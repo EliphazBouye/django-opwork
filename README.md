@@ -1,6 +1,30 @@
-# Django Opwork
+# GigConnect
 
-How to run the project :  
+  Briefly describe what GigConnect is and its purpose.
+  Example: “GigConnect is a platform designed to connect freelancers with job opportunities, offering a user-friendly experience for both freelancers and employers.”
+
+## Features:
+
+  List the main features of your application.
+  Example:
+      User authentication (login/signup)
+      Job listings and applications
+      Messaging between freelancers and employers
+      Profile management for freelancers and employers
+
+## Tech Stack:
+
+  Include the technologies used in each part of the application.  
+  Example:  
+  * API:
+    - Django
+    - Django REST Framework
+  * Frontend:
+    - Next.js
+    - React
+
+## Installation
+
 Prerequis :
 - Python 3.10+
 - Mariadb
